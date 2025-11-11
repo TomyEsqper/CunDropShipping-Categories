@@ -1,0 +1,7 @@
+﻿services:
+  cundropshipping-categories:
+    image: cundropshipping-categories
+    build:
+      context: .
+      dockerfile: CunDropShipping-Categories/Dockerfile
+
