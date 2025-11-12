@@ -5,9 +5,9 @@ namespace CunDropShipping_Categories.application.Service;
 public interface ICategoriesService
 {
     List<DomainCategoriesEntity> GetAllCategories();
-    DomainCategoriesEntity GetCategoriesByName(string name);
-    DomainCategoriesEntity CreateCategories(DomainCategoriesEntity categories);
-    DomainCategoriesEntity UpdateCategories(DomainCategoriesEntity categories);
-    DomainCategoriesEntity DeleteCategories(int id);
-    DomainCategoriesEntity DeleteCategories(DomainCategoriesEntity categories);
+    List<DomainCategoriesEntity>? GetCategoriesByName(string name);
+    DomainCategoriesEntity CreateCategory(DomainCategoriesEntity category);
+    DomainCategoriesEntity? UpdateCategory(int id, DomainCategoriesEntity category);
+    DomainCategoriesEntity? DeleteCategoryById(int id, DomainCategoriesEntity category);
+    List<DomainCategoriesEntity>? DeleteCategoryByName(string name);
 }
