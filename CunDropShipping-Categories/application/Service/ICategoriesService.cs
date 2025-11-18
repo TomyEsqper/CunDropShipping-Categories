@@ -8,6 +8,6 @@ public interface ICategoriesService
     List<DomainCategoriesEntity>? GetCategoriesByName(string name);
     DomainCategoriesEntity CreateCategory(DomainCategoriesEntity category);
     DomainCategoriesEntity? UpdateCategory(int id, DomainCategoriesEntity category);
-    DomainCategoriesEntity? DeleteCategoryById(int id, DomainCategoriesEntity category);
+    DomainCategoriesEntity? DeleteCategoryById(int id);
     List<DomainCategoriesEntity>? DeleteCategoryByName(string name);
 }

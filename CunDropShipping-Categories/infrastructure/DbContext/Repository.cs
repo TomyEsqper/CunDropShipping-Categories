@@ -57,7 +57,7 @@ public class Repository
         return _mapper.ToDomainCategories(existingCategory);
     }
 
-    public DomainCategoriesEntity? DeleteCategoryById(int id, DomainCategoriesEntity domainCategory)
+    public DomainCategoriesEntity? DeleteCategoryById(int id)
     {
         var existingProduct = _context.categories.Find(id);
         if (existingProduct == null) return null;

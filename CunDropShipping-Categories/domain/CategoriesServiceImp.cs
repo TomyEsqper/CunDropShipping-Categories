@@ -32,9 +32,9 @@ public class CategoriesServiceImp : ICategoriesService
         return  _repository.UpdateCategory(id, category);
     }
 
-    public DomainCategoriesEntity? DeleteCategoryById(int id, DomainCategoriesEntity category)
+    public DomainCategoriesEntity? DeleteCategoryById(int id)
     {
-        return _repository.DeleteCategoryById(id, category);
+        return _repository.DeleteCategoryById(id);
     }
 
     public List<DomainCategoriesEntity>? DeleteCategoryByName(string name)

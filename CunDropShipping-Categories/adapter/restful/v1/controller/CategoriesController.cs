@@ -55,12 +55,18 @@ public class CategoriesController : ControllerBase
         return Ok(adapterResult);
     }
     
+// Archivo: CategoriesController.cs (En el Microservicio)
+
     [HttpDelete("{id}")]
-    public ActionResult<AdapterCategoriesEntity> DeleteCategoryById(int id, [FromBody] AdapterCategoriesEntity categories)
+// ✅ CORREGIDO: Solo se pide la ID de la ruta.
+    public ActionResult<AdapterCategoriesEntity> DeleteCategoryById(int id)
     {
-        var domainCategory = _adapterMapper.ToDomainCategories(categories);
-        var deletedCategory = _categoriesService.DeleteCategoryById(id, domainCategory);
+        // 1. Llamada al servicio, solo con el ID.
+        // OJO: Debes cambiar la firma de tu servicio interno para que solo acepte int id.
+        var deletedCategory = _categoriesService.DeleteCategoryById(id); 
+    
         if (deletedCategory == null) return NotFound();
+    
         var adapterResult = _adapterMapper.ToAdapterCategories(deletedCategory);
         return Ok(adapterResult);
     }
